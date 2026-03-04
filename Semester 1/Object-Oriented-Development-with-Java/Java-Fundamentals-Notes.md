@@ -6,16 +6,16 @@
 
 ## Table of Contents
 
-1. [1. Java Program Structure](#1-java-program-structure)
-2. [2. Variables](#2-variables)
-3. [3. Data Types](#3-data-types)
-4. [4. Operators](#4-operators)
-5. [5. Conditional Statements](#5-conditional-statements)
-6. [6. Loops](#6-loops)
-7. [7. Classes and Objects](#7-classes-and-objects)
-8. [8. Constructors](#8-constructors)
-9. [9. Access Modifiers and Encapsulation](#9-access-modifiers-and-encapsulation)
-10. [10. Program Errors](#10-program-errors)
+1. [Java Program Structure](#1-java-program-structure)
+2. [Variables](#2-variables)
+3. [Data Types](#3-data-types)
+4. [Operators](#4-operators)
+5. [Conditional Statements](#5-conditional-statements)
+6. [Loops](#6-loops)
+7. [Classes and Objects](#7-classes-and-objects)
+8. [Constructors](#8-constructors)
+9. [Access Modifiers and Encapsulation](#9-access-modifiers-and-encapsulation)
+10. [Program Errors](#10-program-errors)
 
 ---
 
