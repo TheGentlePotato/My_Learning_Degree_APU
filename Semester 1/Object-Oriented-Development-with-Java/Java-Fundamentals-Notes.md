@@ -1,313 +1,358 @@
-Java Fundamentals Notes
-1. Java Program Structure
-What this concept means
+# Java Fundamentals Notes
+## Object Oriented Development with Java  
+### Semester 1 Reference Notes
 
-A Java program organizes instructions inside classes and methods. The program starts execution from the main method. The Java compiler translates source code into bytecode which runs on the Java Virtual Machine.
+---
 
-Why programmers use this structure
+## Table of Contents
 
-The structure organizes code clearly and allows large programs to remain readable and maintainable. The JVM allows the same program to run across operating systems.
+1. [1. Java Program Structure](#1-java-program-structure)
+2. [2. Variables](#2-variables)
+3. [3. Data Types](#3-data-types)
+4. [4. Operators](#4-operators)
+5. [5. Conditional Statements](#5-conditional-statements)
+6. [6. Loops](#6-loops)
+7. [7. Classes and Objects](#7-classes-and-objects)
+8. [8. Constructors](#8-constructors)
+9. [9. Access Modifiers and Encapsulation](#9-access-modifiers-and-encapsulation)
+10. [10. Program Errors](#10-program-errors)
 
-When programmers use this
+---
 
-Every Java application requires a class and a main method when execution begins from a standalone program.
+# 1. Java Program Structure
 
-Example
+## 1.1 Definition
+
+A Java program organizes instructions into **classes** and **methods**.  
+Program execution begins from the **main method**.
+
+The Java compiler converts source code into **bytecode**, which runs inside the **Java Virtual Machine (JVM)**.
+
+## 1.2 Purpose
+
+The structure provides:
+
+- **Code organization**
+- **Better readability**
+- **Platform independence**
+
+Programs compiled into bytecode run on any system that has a JVM.
+
+## 1.3 Example
+
+```java
 public class HelloWorld {
 
     public static void main(String[] args) {
+
         System.out.println("Hello World");
+
     }
 
 }
-Common errors
+```
 
-Missing class name
-Missing main method
-Incorrect method syntax
-Missing braces
+## 1.4 Explanation
 
-Example compile error
+**public**  
+Defines the access level of the class.
 
-System.out.println("Hello World")
+**class**  
+Defines the blueprint of the program.
 
-The semicolon is missing.
+**main()**  
+Entry point of program execution.
 
-2. Variables
-What a variable means
+**System.out.println()**  
+Displays output on the console.
 
-A variable stores a value which a program reads or modifies during execution.
+---
 
-Why programmers use variables
+# 2. Variables
 
-Programs require memory storage for data such as numbers, text, or results of calculations.
+## 2.1 Definition
 
-Situations where variables appear
+A **variable** is a named storage location in memory used to store data during program execution.
 
-Storing user input
-Storing calculation results
-Saving object attributes
-Loop counters
+## 2.2 Purpose
 
-Example
-int age = 20;
-String name = "Ali";
-double price = 10.5;
-Common errors
+Variables allow programs to:
 
-Using a variable before declaration
+- store user input
+- store calculation results
+- maintain program state
 
-age = 20;
+## 2.3 Example
 
-Correct version
+```java
+public class VariableExample {
 
-int age = 20;
+    public static void main(String[] args) {
 
-Another error occurs when assigning the wrong type.
+        int age = 20;
+        String name = "Ali";
+        double price = 10.50;
 
-int age = "20";
-3. Data Types
-What data types represent
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(price);
 
-A data type defines the type of value stored inside a variable.
+    }
 
-Why data types exist
-
-Different data types allow the program to manage memory efficiently and perform operations correctly.
-
-Situations where data types matter
-
-Numeric calculations
-Character processing
-Logical decision making
-
-Primitive data types
-
-int
-Stores whole numbers.
-
-double
-Stores decimal numbers.
-
-char
-Stores a single character.
-
-boolean
-Stores logical values.
-
-Example
-int number = 10;
-double price = 19.99;
-char grade = 'A';
-boolean passed = true;
-Common errors
-
-Incorrect data type assignment.
-
-int price = 19.99;
-
-Correct version
-
-double price = 19.99;
-4. Operators
-What operators represent
-
-Operators perform operations on values or variables.
-
-Why programmers use operators
-
-Programs require mathematical calculations, comparisons, and logical decisions.
-
-Situations where operators appear
-
-Calculations
-Conditions
-Loop control
-Logical decision making
-
-Arithmetic operators
-
-Addition
-
-int sum = a + b;
-
-Subtraction
-
-int result = a - b;
-
-Multiplication
-
-int product = a * b;
-
-Division
-
-int division = a / b;
-Comparison operators
-
-Used for decision making.
-
-Example
-
-if (age >= 18)
-Logical operators
-
-Combine multiple conditions.
-
-Example
-
-if (age > 18 && age < 30)
-Common errors
-
-Division by zero
-Incorrect comparison operator
-Assignment used instead of comparison
-
-Incorrect
-
-if (age = 18)
-
-Correct
-
-if (age == 18)
-5. Conditional Statements
-What conditional statements represent
-
-Conditional statements control program flow based on conditions.
-
-Why programmers use conditional logic
-
-Programs must make decisions depending on input or program state.
-
-Situations where conditions appear
-
-Age verification
-Login validation
-Score grading
-Menu selection
-
-Example
-int age = 18;
-
-if (age >= 18) {
-    System.out.println("Adult");
 }
-If else structure
-if (score >= 50) {
-    System.out.println("Pass");
-} else {
-    System.out.println("Fail");
+```
+
+## 2.4 Explanation
+
+**int age** stores a whole number.
+
+**String name** stores text.
+
+**double price** stores decimal numbers.
+
+Variables store information which can change during program execution.
+
+---
+
+# 3. Data Types
+
+## 3.1 Definition
+
+A **data type** specifies the type of value stored in a variable.
+
+## 3.2 Purpose
+
+Data types help Java determine:
+
+- how much memory is required
+- what operations are allowed
+- how the value is interpreted
+
+## 3.3 Primitive Data Types
+
+| Data Type | Description |
+|-----------|-------------|
+| int | Whole numbers |
+| double | Decimal numbers |
+| char | Single character |
+| boolean | True or False |
+
+## 3.4 Example
+
+```java
+public class DataTypeExample {
+
+    public static void main(String[] args) {
+
+        int number = 10;
+        double price = 19.99;
+        char grade = 'A';
+        boolean passed = true;
+
+        System.out.println(number);
+        System.out.println(price);
+        System.out.println(grade);
+        System.out.println(passed);
+
+    }
+
 }
-Common errors
+```
 
-Missing braces
-Wrong comparison operator
-Incorrect logic conditions
+---
 
-6. Loops
-What loops represent
+# 4. Operators
 
-Loops repeat a block of code multiple times.
+## 4.1 Definition
 
-Why programmers use loops
+Operators perform calculations and logical comparisons.
 
-Programs often repeat actions such as processing lists, printing data, or performing calculations.
+## 4.2 Purpose
 
-Situations where loops appear
+Operators allow programs to:
 
-Iterating through arrays
-Repeating calculations
-Processing user input
+- perform arithmetic calculations
+- compare values
+- control program logic
 
-For loop
+## 4.3 Arithmetic Operators
 
-Used when the number of repetitions is known.
+| Operator | Function |
+|---------|---------|
+| + | Addition |
+| - | Subtraction |
+| * | Multiplication |
+| / | Division |
+| % | Modulus |
 
-for (int i = 0; i < 5; i++) {
-    System.out.println(i);
+## 4.4 Example
+
+```java
+public class OperatorExample {
+
+    public static void main(String[] args) {
+
+        int a = 10;
+        int b = 3;
+
+        int sum = a + b;
+        int difference = a - b;
+        int product = a * b;
+        int division = a / b;
+        int remainder = a % b;
+
+        System.out.println(sum);
+        System.out.println(difference);
+        System.out.println(product);
+        System.out.println(division);
+        System.out.println(remainder);
+
+    }
+
 }
-While loop
+```
 
-Used when repetition depends on a condition.
+---
 
-int i = 0;
+# 5. Conditional Statements
 
-while (i < 5) {
-    System.out.println(i);
-    i++;
+## 5.1 Definition
+
+Conditional statements allow the program to make decisions based on conditions.
+
+## 5.2 Purpose
+
+Programs often need to perform different actions depending on a situation.
+
+Conditional statements evaluate conditions and determine which code block runs.
+
+## 5.3 Example
+
+```java
+public class ConditionalExample {
+
+    public static void main(String[] args) {
+
+        int score = 60;
+
+        if (score >= 50) {
+            System.out.println("Pass");
+        }
+        else {
+            System.out.println("Fail");
+        }
+
+    }
+
 }
-Do while loop
+```
 
-Runs at least once before checking the condition.
+## 5.4 Explanation
 
-int i = 0;
+**if statement** checks whether a condition is true.
 
-do {
-    System.out.println(i);
-    i++;
-} while (i < 5);
-Common errors
+If true, the program executes the first block.
 
-Infinite loop
+If false, the program executes the **else block**.
 
-while (true)
+---
 
-Missing loop update
+# 6. Loops
 
-while (i < 5) {
-    System.out.println(i);
+## 6.1 Definition
+
+A **loop** repeatedly executes a block of code while a condition remains true.
+
+## 6.2 Purpose
+
+Loops help perform repetitive tasks efficiently.
+
+Without loops, the same code would need to be written multiple times.
+
+## 6.3 Example
+
+```java
+public class LoopExample {
+
+    public static void main(String[] args) {
+
+        for (int i = 0; i < 5; i++) {
+
+            System.out.println(i);
+
+        }
+
+    }
+
 }
-7. Classes
-What a class represents
+```
 
-A class defines a blueprint for objects. It describes properties and behaviors.
+## 6.4 Explanation
 
-Why programmers use classes
+The loop starts with **i = 0**.
 
-Classes organize complex programs and support object oriented programming.
+The loop continues while **i < 5**.
 
-Situations where classes appear
+After each iteration, **i increases by 1**.
 
-Student systems
-Bank account systems
-Game character objects
+---
 
-Example
+# 7. Classes and Objects
+
+## 7.1 Definition
+
+A **class** acts as a blueprint.
+
+An **object** represents an instance created from a class.
+
+## 7.2 Purpose
+
+Classes organize data and behavior into reusable structures.
+
+Objects represent real-world entities.
+
+## 7.3 Example
+
+```java
 class Student {
 
     String name;
     int age;
 
 }
-8. Objects
-What an object represents
 
-An object is an instance created from a class.
+public class Main {
 
-Why programmers use objects
+    public static void main(String[] args) {
 
-Objects represent real world entities and allow programs to manage data in structured ways.
+        Student s1 = new Student();
 
-Situations where objects appear
+        s1.name = "Ali";
+        s1.age = 20;
 
-User accounts
-Students
-Products
+        System.out.println(s1.name);
+        System.out.println(s1.age);
 
-Example
-Student s1 = new Student();
+    }
 
-s1.name = "Ali";
-s1.age = 20;
-9. Constructors
-What a constructor represents
+}
+```
 
-A constructor initializes an object when it is created.
+---
 
-Why programmers use constructors
+# 8. Constructors
 
-Constructors ensure objects receive initial values when creation occurs.
+## 8.1 Definition
 
-Example
+A **constructor** initializes an object when it is created.
+
+## 8.2 Purpose
+
+Constructors ensure that objects start with proper values.
+
+## 8.3 Example
+
+```java
 class Student {
 
     String name;
@@ -322,25 +367,41 @@ class Student {
 
 }
 
-Create object
+public class Main {
 
-Student s1 = new Student("Ali", 20);
-10. Access Modifiers
-What access modifiers represent
+    public static void main(String[] args) {
 
-Access modifiers control which parts of the program access variables and methods.
+        Student s1 = new Student("Ali", 20);
 
-Why programmers use access control
+        System.out.println(s1.name);
+        System.out.println(s1.age);
 
-Encapsulation protects data and prevents unauthorized modification.
+    }
 
-Types
+}
+```
 
-public
-private
-protected
+---
 
-Example
+# 9. Access Modifiers and Encapsulation
+
+## 9.1 Definition
+
+Access modifiers control visibility of variables and methods.
+
+Encapsulation protects data by restricting direct access.
+
+## 9.2 Access Modifiers
+
+| Modifier | Access |
+|--------|--------|
+| public | Accessible everywhere |
+| private | Accessible only inside the class |
+| protected | Accessible in same package and subclasses |
+
+## 9.3 Example
+
+```java
 class Student {
 
     private int age;
@@ -354,6 +415,113 @@ class Student {
     }
 
 }
-Summary
 
-Java fundamentals include program structure, variables, data types, operators, conditional statements, loops, classes, objects, constructors, and access modifiers. These concepts form the foundation for object oriented programming and software development.
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s1 = new Student();
+
+        s1.setAge(20);
+
+        System.out.println(s1.getAge());
+
+    }
+
+}
+```
+
+---
+
+# 10. Program Errors
+
+## 10.1 Compile Time Error
+
+Errors detected by the compiler before execution.
+
+Example
+
+```java
+public class ErrorExample {
+
+    public static void main(String[] args) {
+
+        System.out.println("Hello World")
+
+    }
+
+}
+```
+
+Missing semicolon causes a compile error.
+
+---
+
+## 10.2 Runtime Error
+
+Errors occurring during execution.
+
+Example
+
+```java
+public class RuntimeExample {
+
+    public static void main(String[] args) {
+
+        int number = 10 / 0;
+
+        System.out.println(number);
+
+    }
+
+}
+```
+
+Division by zero produces an **ArithmeticException**.
+
+---
+
+## 10.3 Logical Error
+
+The program runs but produces incorrect results.
+
+Example
+
+```java
+public class LogicalErrorExample {
+
+    public static void main(String[] args) {
+
+        int score = 50;
+
+        if (score > 50) {
+            System.out.println("Pass");
+        }
+
+    }
+
+}
+```
+
+The condition should be **>= 50**.
+
+---
+
+## 11. Conclusion
+
+These notes introduced the fundamental concepts of Java programming, including program structure, variables, data types, operators, conditional statements, and loops, which form the basic logic of a program. The material also covered key object oriented concepts such as classes, objects, constructors, and encapsulation, explaining how Java organizes data and behavior into structured and reusable components. In addition, different types of program errors, including compile time errors, runtime errors, and logical errors, were discussed to highlight common issues that occur during program development. Together, these concepts provide a foundational understanding of Java programming and prepare learners for more advanced object oriented programming topics.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
