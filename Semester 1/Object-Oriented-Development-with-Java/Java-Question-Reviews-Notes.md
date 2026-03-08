@@ -118,49 +118,68 @@ D is wrong because parameter names do not need to match. `thing` and `msg` are b
 ### Question
 
 ```java
-abstract class ClassA {
+abstract class ClassA{
     __1__ void exec() { }
     protected abstract void comp();
 }
 
-class ClassB extends ClassA {
+class ClassB extends ClassA{
     __2__ void exec() { }
     __3__ void comp() { }
 }
 ```
 
-Which of the following are incorrect?
+Which modifications, made independently, enable the code to compile?  
+(default = no keyword)
 
-i. __1__ = private, __2__ = protected, __3__ = public  
-ii. __1__ = private, __2__ = private, __3__ = protected  
-iii. __1__ = protected, __2__ = void, __3__ = public  
-iv. __1__ = protected, __2__ = public, __3__ = protected  
-v. __1__ = public, __2__ = public, __3__ = public  
-vi. __1__ = void, __2__ = void, __3__ = void  
-vii. __1__ = protected, __2__ = protected, __3__ = protected  
+i. 1 = private; 2 = protected; 3 = public  
+ii. 1 = private; 2 = private; 3 = protected  
+iii. 1 = protected; 2 = default; 3 = public  
+iv. 1 = protected; 2 = public; 3 = protected  
+v. 1 = public; 2 = public; 3 = public  
+vi. 1 = default; 2 = default; 3 = default  
+vii. 1 = protected; 2 = protected; 3 = protected  
 
-A. All except (iii) and (vi)  
-B. All except (ii) and (vi)  
-C. All except (i) and (vii)  
-D. All except (v) and (vi)  
+A. Only (v)  
+B. All except (iii) and (vi)  
+C. All except (i) and (vi)  
+D. All except (i) and (ii)
 
 ### Correct Answer
 
-A
+B
 
-### Why A is correct
+### Explanation
 
-Rules used:
+Two Java rules apply.
 
-- A child method overriding a parent method cannot reduce visibility.
-- A method implementing `protected abstract void comp()` must be `protected` or `public`.
+Rule 1  
+A child method cannot reduce the visibility of a parent method.
 
-Check the invalid ones.
+Rule 2  
+A method implementing
+
+```java
+protected abstract void comp();
+```
+
+must be `protected` or `public`.
+
+---
+
+### Invalid combinations
 
 iii is invalid.
 
-Parent `exec()` is `protected`, child `exec()` becomes default access.  
-That reduces visibility. Not allowed.
+Parent `exec()` becomes:
+
+```java
+protected void exec()
+```
+
+Child `exec()` becomes default access.
+
+This reduces visibility from `protected` to default, which Java does not allow.
 
 vi is invalid.
 
@@ -170,18 +189,21 @@ Parent `comp()` is:
 protected abstract void comp();
 ```
 
-Child `comp()` becomes default access.  
-That reduces visibility. Not allowed.
+Child `comp()` becomes default access.
 
-### Why the others are valid
+This reduces visibility from `protected` to default, which is not allowed.
 
-i and ii are valid because a private parent method is not inherited, so the child `exec()` is not overriding it.
+---
 
-iv is valid because child visibility is the same or wider.
+### Why the other combinations compile
 
-v is valid because both methods use public.
+i and ii compile because a **private parent method is not inherited**, so the child `exec()` is not overriding it.
 
-vii is valid because both methods use protected.
+iv compiles because visibility is widened.
+
+v compiles because both methods use `public`.
+
+vii compiles because both methods use `protected`.
 
 ---
 
@@ -983,52 +1005,84 @@ try {
     System.out.println(number_ls[5]);
 }
 catch (ArrayIndexOutOfBoundsException e) {
-    System.out.println("ArrayIndexOutOfBoundsException");
+    System.out.println(1);
 }
 catch (IOException e) {
-    System.out.println("IOException");
+    System.out.println(2);
 }
 catch (NullPointerException e) {
-    System.out.println("NullPointerException");
+    System.out.println(3);
 }
 ```
 
-What is the output?
+What is the result when this code is executed?
 
-1. ArrayIndexOutOfBoundsException  
-2. IOException  
-3. NullPointerException  
-4. Compilation error  
+A. 1  
+B. 2  
+C. Compilation error  
+D. 3  
 
 ### Correct Answer
 
+C
+
+### Explanation
+
+The array has 5 elements.
+
+Valid indexes are:
+
+```
+0
+1
+2
+3
 4
+```
 
-### Why 4 is correct
+Accessing index 5 would normally cause:
 
-The array has 5 elements, so valid indexes are:
+```
+ArrayIndexOutOfBoundsException
+```
 
-- 0
-- 1
-- 2
-- 3
-- 4
+If the program ran, the first catch block would execute and print:
 
-So `number_ls[5]` would normally cause `ArrayIndexOutOfBoundsException`.
+```
+1
+```
 
-But the code never reaches runtime because of this catch block:
+However, the program does **not compile**.
+
+The problem is this catch block:
 
 ```java
 catch (IOException e)
 ```
 
-`IOException` is a checked exception.
+`IOException` is a **checked exception**.
 
-The try block only accesses an array. It does not contain file or I/O code, so `IOException` cannot happen there.
+Java requires that a checked exception in a `catch` block must be something that the `try` block can throw.
 
-Java does not allow catching a checked exception that cannot occur in the try block.
+The `try` block only contains:
 
-So the code fails to compile.
+```java
+System.out.println(number_ls[5]);
+```
+
+Array access cannot throw `IOException`.
+
+Because of this, the compiler produces an error:
+
+```
+exception IOException is never thrown in body of corresponding try statement
+```
+
+Therefore the code **fails at compilation**, and the correct answer is:
+
+```
+Compilation error
+```
 
 ---
 
@@ -1467,75 +1521,65 @@ So final answer is 3.
 
 ```java
 abstract class Planet {
-    protected void revolve() { }   // n1
-    abstract void rotate();        // n2
+    protected void revolve() { }   // line n1
+    abstract void rotate();        // line n2
 }
 
 class Earth extends Planet {
-    void revolve() { }             // n3
-    protected void rotate() { }    // n4
+    void revolve() { }             // line n3
+    protected void rotate() { }    // line n4
 }
 ```
 
-Which two modifications, made independently, enable the code to compile?
+Which 2 modifications, made independently, enable the code to compile?
 
-A. Make the method at line n3 public  
-B. Make the method at line n4 public  
-C. Make the method at line n3 protected  
-D. Make the method at line n2 protected  
+A. Make the method at line n1 public. And make the method at line n3 public.  
+B. Make the method at line n1 public. And make the method at line n2 public.  
+C. Make the method at line n3 public. And make the method at line n3 protected.  
+D. Make the method at line n2 public. And make the method at line n2 protected.  
 
 ### Correct Answer
 
-A and C
+C
 
-### Why A and C are correct
+### Explanation
 
-The problem is here.
+The only compilation problem is at line n3.
 
-Parent:
+Parent method:
 
 ```java
-protected void revolve()
+protected void revolve() { }
 ```
 
-Child:
+Child method:
 
 ```java
-void revolve()
+void revolve() { }
 ```
 
-The child reduces visibility from `protected` to default access. That is not allowed in overriding.
+The child method uses default access, which is weaker than protected.
 
-To fix it, line n3 must become:
+Java does not allow an overriding method to reduce visibility.
+
+So line n3 must be changed to either:
 
 ```java
-protected void revolve()
+public void revolve() { }
 ```
 
 or
 
 ```java
-public void revolve()
+protected void revolve() { }
 ```
 
-So A and C are correct.
-
-### Why B is not needed
-
-`rotate()` in parent has default access:
+That is why the correct answer is:
 
 ```java
-abstract void rotate();
+C
 ```
 
-Child has:
+Line n4 is already valid because the parent method `rotate()` has default access, while the child method uses protected, which is wider visibility.
 
-```java
-protected void rotate()
-```
-
-That is wider visibility, which is allowed.
-
-### Why D is not needed
-
-Changing the parent abstract method access is unnecessary because line n4 is already valid.
+---
