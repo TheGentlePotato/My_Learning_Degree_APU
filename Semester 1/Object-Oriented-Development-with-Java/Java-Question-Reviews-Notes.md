@@ -826,24 +826,24 @@ ACBB
 
 ```java
 class Base {
-    Base() {
+    public Base() {
         System.out.println("Base");
     }
 }
 
 class Derived extends Base {
-    Derived() {
+    public Derived() {
         System.out.println("Derived");
     }
 }
 
 class DeriDerived extends Derived {
-    DeriDerived() {
+    public DeriDerived() {
         System.out.println("DeriDerived");
     }
 }
 
-public class Test {
+public class Exam {
     public static void main(String[] args) {
         Derived b = new DeriDerived();
     }
@@ -852,26 +852,63 @@ public class Test {
 
 What is the output?
 
-A. Derived Base DeriDerived  
-B. Base Derived DeriDerived  
-C. DeriDerived Derived Base  
-D. Compilation error  
+A.
+```java
+Base
+Derived
+DeriDerived
+```
+
+B.
+```java
+Derived
+DeriDerived
+```
+
+C.
+```java
+DeriDerived
+Derived
+Base
+```
+
+D. Compilation error
 
 ### Correct Answer
 
-B
+A
 
-### Why B is correct
+### Why A is correct
 
-Constructors run from parent to child.
+When this object is created:
 
-Creating `new DeriDerived()` causes:
+```java
+new DeriDerived()
+```
 
-- `Base()`
-- `Derived()`
-- `DeriDerived()`
+Java runs constructors from parent class to child class.
 
-Reference type does not change constructor order. The actual object type controls constructor execution.
+So the order is:
+
+1. `Base()`
+2. `Derived()`
+3. `DeriDerived()`
+
+This prints:
+
+```java
+Base
+Derived
+DeriDerived
+```
+
+### Why the other options are wrong
+
+B is wrong because the parent constructor `Base()` runs first.
+
+C is wrong because child constructors do not run before parent constructors.
+
+D is wrong because the code is valid and compiles successfully.
 
 ---
 
