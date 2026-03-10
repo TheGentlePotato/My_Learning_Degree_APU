@@ -1,4 +1,3 @@
-
 # SDM Exam Tips Detailed Notes
 
 ---
@@ -7,52 +6,52 @@
 
 ### Definition
 
-Data analysis is the process of transforming raw data collected from different sources into meaningful information that helps system analysts understand system problems and define accurate system requirements.
+Data analysis is the process of transforming raw data collected from multiple sources into useful information that helps system analysts understand system problems and define system requirements.
 
-The results of data analysis are normally used when preparing the System Requirements Specification (SRS).
+The results of data analysis are normally used to prepare the System Requirements Specification (SRS).
 
 ---
 
-### Stages of Data Analysis Process
+### Stages of the Data Analysis Process
 
 | Stage | Description | Purpose | Example |
 |---|---|---|---|
-| Data Collection and Compilation | Collect data from different sources such as interviews, questionnaires, observation, documents, and databases | Understand the current system | Collecting feedback from system users |
-| Data Cleaning | Remove duplicate, incorrect, incomplete, or irrelevant data | Improve data accuracy | Removing duplicate survey responses |
-| Data Analysis | Identify patterns, relationships, and trends | Discover system problems | Identifying that most users complain about login errors |
-| Data Visualization | Present results using charts, graphs, and reports | Help stakeholders understand results | Pie chart showing system issues |
-| Conclusions | Interpret the results and determine system improvements | Support system requirement development | Deciding to improve authentication system |
+| Data Collection and Compilation | Gathering and combining data from multiple sources | Understand the current system | Collecting feedback from system users |
+| Data Cleaning | Removing incorrect, duplicate, or incomplete data | Improve data accuracy | Removing repeated survey responses |
+| Data Analysis | Examining data to identify patterns or problems | Discover system weaknesses | Identifying frequent login failures |
+| Data Visualization | Presenting results using charts, tables, or reports | Improve understanding of results | Graph showing system usage |
+| Conclusions | Interpreting analysis results | Support creation of system requirements | Concluding the system requires improved security |
 
 ---
 
 ### Advantages of Data Analysis
 
-- Helps analysts understand real system problems
-- Improves accuracy of system requirements
-- Supports data driven decision making
+- Helps identify real system problems  
+- Improves quality of system requirements  
+- Supports data based decision making  
 
 ### Disadvantages
 
-- Requires large amount of reliable data
-- Data cleaning can be time consuming
+- Requires reliable data sources  
+- Cleaning data may take significant time  
 
 ---
 
-## 2 System Requirement Specification (SRS)
+## 2 System Requirements Specification (SRS)
 
 ### Definition
 
-System Requirements Specification is a formal document describing all system requirements and constraints that must be satisfied by the system.
+System Requirements Specification is a formal document describing all requirements that the system must satisfy.
 
-It serves as an agreement between stakeholders and developers.
+It acts as an agreement between stakeholders and developers regarding system functionality and constraints.
 
 ---
 
 ### Purpose of SRS
 
-- Defines system functionality clearly
-- Reduces misunderstandings between stakeholders
-- Serves as reference for system design and development
+- Clearly defines system requirements  
+- Prevents misunderstanding between stakeholders and developers  
+- Serves as a reference for system design and development  
 
 ---
 
@@ -60,26 +59,26 @@ It serves as an agreement between stakeholders and developers.
 
 | Requirement Type | Description | Example |
 |---|---|---|
-| Functional Requirements | Specific operations the system must perform | User login system |
-| Non Functional Requirements | Quality attributes such as performance or reliability | System response within 2 seconds |
-| Technical Requirements | Technical environment required to run system | Linux server |
-| Security Requirements | Protection mechanisms for system data | Data encryption |
-| Interface Requirements | Interaction between systems or devices | Payment gateway integration |
-| User Requirements | Expectations from system users | Easy search function |
-| Business Requirements | Organizational goals supported by system | Increase online sales |
+| Functional Requirements | Describe what the system must do | User login function |
+| Non Functional Requirements | Describe system quality attributes | System response within two seconds |
+| Technical Requirements | Describe technical environment needed | System must run on Linux server |
+| Security Requirements | Protect system data and access | Password encryption |
+| Interface Requirements | Interaction with other systems | Payment gateway connection |
+| User Requirements | Requirements from user perspective | Simple search function |
+| Business Requirements | Business goals supported by system | Increase online sales |
 
 ---
 
 ### Advantages of SRS
 
-- Provides clear system specification
-- Helps developers understand system requirements
-- Improves development planning
+- Provides clear system documentation  
+- Improves communication between stakeholders  
+- Helps guide system development  
 
 ### Disadvantages
 
-- Requires extensive documentation
-- Requirements may change during development
+- Documentation preparation takes time  
+- Requirements may change during development  
 
 ---
 
@@ -95,10 +94,10 @@ A prototype is an early version of a system developed to demonstrate system func
 
 | Prototype Type | Description | Advantages | Disadvantages |
 |---|---|---|---|
-| Throw Away Prototype | Temporary prototype built only to understand requirements | Quick development | Prototype discarded |
-| Evolutionary Prototype | Prototype continuously improved until final system | Continuous improvement | Architecture may become messy |
-| Incremental Prototype | System built using several smaller prototypes | Modular development | Integration complexity |
-| Extreme Prototype | Used mainly for web systems with staged development | Efficient for web systems | Limited to web applications |
+| Throw Away Prototype | Temporary prototype used to understand requirements | Quick development | Prototype discarded |
+| Evolutionary Prototype | Prototype gradually improved until it becomes final system | Continuous improvement | May produce poor architecture |
+| Incremental Prototype | System built from several smaller prototypes | Modular development | Integration complexity |
+| Extreme Prototype | Prototype developed in stages for web systems | Effective for web systems | Mainly used for web applications |
 
 ---
 
@@ -106,102 +105,96 @@ A prototype is an early version of a system developed to demonstrate system func
 
 | Stage | Description |
 |---|---|
-| Stage 1 | Create static web interface |
-| Stage 2 | Develop application logic |
-| Stage 3 | Integrate database and services |
+| Stage 1 | Create static interface pages |
+| Stage 2 | Develop system logic |
+| Stage 3 | Integrate database and external services |
 
 ---
 
 ## 4 Coding Strategies
 
-Coding strategies are planning approaches used before writing software code to ensure efficient, maintainable, and scalable system development.
+Coding strategies refer to planning decisions made before writing program code in order to ensure efficient system development.
 
 ---
 
 ### Software Architecture Strategy
 
-#### Definition
-
-Software architecture refers to the overall structure of a system and the way system components interact.
+Software architecture defines the overall structure of a system and how system components interact with each other.
 
 ---
 
-### Common Architecture Types
+### Types of Software Architecture
 
 | Architecture | Description | Example |
 |---|---|---|
-| Monolithic Architecture | All components integrated into one system | Small applications |
-| Client Server Architecture | Client communicates with centralized server | Banking systems |
-| Layered Architecture | System divided into layers such as presentation, logic, database | Web applications |
-| Microservices Architecture | System divided into independent services | Cloud platforms |
+| Monolithic Architecture | All system components combined into one system | Small applications |
+| Client Server Architecture | Clients communicate with centralized server | Banking system |
+| Layered Architecture | System divided into layers such as presentation, logic, and database | Web application |
+| Microservices Architecture | System divided into independent services | Cloud based systems |
 
 ---
 
 ### Advantages of Good Architecture
 
-- Improves system scalability
-- Simplifies maintenance
-- Allows modular development
+- Improves system scalability  
+- Simplifies system maintenance  
+- Supports modular development  
 
 ### Disadvantages
 
-- Requires careful planning
-- Poor architecture leads to system redesign
+- Requires careful planning  
+- Poor architecture may cause system redesign  
 
 ---
 
 ### Programming Language Selection Strategy
 
-Developers must select programming languages suitable for system requirements.
+Selecting a programming language depends on several factors.
 
----
-
-#### Factors to Consider
-
-| Factor | Description |
+| Factor | Explanation |
 |---|---|
-| System performance | Some languages provide higher performance |
-| Platform compatibility | Language must support target platform |
-| Developer expertise | Developers must understand the language |
-| System complexity | Complex systems require advanced languages |
+| System Performance | High performance systems may require efficient languages |
+| Platform Compatibility | Language must support the target platform |
+| Developer Expertise | Developers must be familiar with the language |
+| System Complexity | Complex systems require advanced languages |
 
 ---
 
 ### Advantages
 
-- Efficient system development
-- Better performance and scalability
+- Improves system efficiency  
+- Supports maintainability  
 
 ### Disadvantages
 
-- Incorrect language choice causes compatibility issues
+- Incorrect language selection may create compatibility issues  
 
 ---
 
 ### Coding Standards Strategy
 
-Coding standards define rules developers follow when writing software code.
+Coding standards define rules developers must follow when writing code.
 
-Examples include formatting rules, naming conventions, and documentation practices.
+Examples include naming conventions, formatting rules, and documentation guidelines.
 
 ---
 
 ### Advantages
 
-- Improves code readability
-- Simplifies debugging
-- Supports team collaboration
+- Improves readability of code  
+- Simplifies debugging and maintenance  
+- Supports teamwork in large projects  
 
 ### Disadvantages
 
-- Requires developer discipline
-- May slow development initially
+- Requires discipline from developers  
+- May slow development during early stages  
 
 ---
 
 ### Testing Strategy Before Coding
 
-Testing strategies ensure system quality during development.
+Testing strategies are planned to ensure system reliability and quality.
 
 ---
 
@@ -211,19 +204,19 @@ Testing strategies ensure system quality during development.
 |---|---|
 | Unit Testing | Testing individual components |
 | Integration Testing | Testing interaction between modules |
-| System Testing | Testing complete system |
-| Acceptance Testing | Testing with real users |
+| System Testing | Testing the complete system |
+| Acceptance Testing | Testing system with real users |
 
 ---
 
 ### Advantages
 
-- Detects errors early
-- Improves system reliability
+- Detects errors early  
+- Improves system quality  
 
 ### Disadvantages
 
-- Requires additional development time
+- Requires additional development effort  
 
 ---
 
@@ -237,23 +230,23 @@ Packaging software prepares the system for installation and deployment.
 
 | Activity | Description |
 |---|---|
-| Source Code Protection | Secure and prepare source code |
+| Source Code Protection | Secure and prepare system code |
 | Installation Package Creation | Create setup installation files |
 | File Compression | Reduce file size for distribution |
 | System Deployment | Upload system to server |
-| User Manual Preparation | Guide for system users |
-| Technical Documentation | Guide for administrators |
+| User Manual Preparation | Provide guide for system users |
+| Technical Documentation | Provide guide for administrators |
 
 ---
 
 ### Advantages
 
-- Simplifies installation
-- Supports system distribution
+- Simplifies system installation  
+- Improves system distribution  
 
 ### Disadvantages
 
-- Requires additional preparation work
+- Requires additional preparation work  
 
 ---
 
@@ -261,7 +254,7 @@ Packaging software prepares the system for installation and deployment.
 
 ### Definition
 
-Mirror swapping is a maintenance strategy that allows system updates without interrupting system operations.
+Mirror swapping is a maintenance strategy used to update systems without causing service downtime.
 
 ---
 
@@ -270,21 +263,21 @@ Mirror swapping is a maintenance strategy that allows system updates without int
 | Step | Description |
 |---|---|
 | Step 1 | Create duplicate mirror server |
-| Step 2 | Perform updates on mirror server |
+| Step 2 | Perform maintenance on mirror server |
 | Step 3 | Replace main server with mirror server |
 
 ---
 
 ### Advantages
 
-- No system downtime
-- Continuous service availability
-- Safe maintenance process
+- No system downtime  
+- Continuous system availability  
+- Safer maintenance process  
 
 ### Disadvantages
 
-- Requires extra server infrastructure
-- Higher operational cost
+- Requires additional hardware infrastructure  
+- Higher operational cost  
 
 ---
 
@@ -298,10 +291,10 @@ System changeover refers to replacing the old system with the new system.
 
 | Feature | Description |
 |---|---|
-| Definition | Immediate replacement of old system |
+| Definition | Old system immediately replaced by new system |
 | Advantages | Fast implementation and low cost |
 | Disadvantages | High risk if new system fails |
-| Suitable For | Small and non critical systems |
+| Suitable For | Small systems |
 
 ---
 
@@ -309,7 +302,7 @@ System changeover refers to replacing the old system with the new system.
 
 | Feature | Description |
 |---|---|
-| Definition | Old system and new system run simultaneously |
+| Definition | Old and new systems run at the same time |
 | Advantages | Very low risk |
 | Disadvantages | High operational cost |
 | Suitable For | Critical systems |
@@ -320,10 +313,10 @@ System changeover refers to replacing the old system with the new system.
 
 | Feature | Description |
 |---|---|
-| Definition | System implemented in one department first |
+| Definition | New system implemented in one department first |
 | Advantages | Problems detected early |
-| Disadvantages | Slower full deployment |
-| Suitable For | Systems replacing manual processes |
+| Disadvantages | Slower deployment |
+| Suitable For | Systems replacing manual operations |
 
 ---
 
@@ -333,7 +326,7 @@ System changeover refers to replacing the old system with the new system.
 |---|---|
 | Definition | System implemented module by module |
 | Advantages | Gradual transition |
-| Disadvantages | Longer implementation time |
+| Disadvantages | Long implementation time |
 | Suitable For | Large complex systems |
 
 ---
@@ -350,30 +343,112 @@ System changeover refers to replacing the old system with the new system.
 
 ---
 
+## 9 Outsourcing in System Development
+
+### Definition
+
+Outsourcing refers to hiring external service providers to perform IT related tasks instead of performing them internally.
+
+---
+
+### Reasons for Outsourcing
+
+| Reason | Explanation |
+|---|---|
+| Lack of Time | Internal team may not have enough time |
+| Lack of Skills | Organization may lack technical expertise |
+| Cost Reduction | External providers may reduce development cost |
+| Focus on Core Business | Company can focus on main business goals |
+| Resource Limitations | Internal staff may already be overloaded |
+
+---
+
+### Advantages of Outsourcing
+
+- Access to expert knowledge  
+- Reduces internal workload  
+- Allows focus on core business activities  
+- Faster development in some situations  
+
+---
+
+### Disadvantages of Outsourcing
+
+| Disadvantage | Explanation |
+|---|---|
+| High Long Term Cost | Contract changes may increase costs |
+| Communication Barriers | Language or time zone differences |
+| Security Risks | Sharing system data may cause breaches |
+| Less Control | Organization has less control over project |
+
+---
+
+## 10 Risk Management
+
+### Definition
+
+Risk management is the process of identifying, analyzing, and managing risks that may affect the success of a system development project.
+
+---
+
+### Risk Management Process
+
+| Step | Description |
+|---|---|
+| Risk Identification | Identify potential risks |
+| Risk Description | Describe each risk |
+| Risk Analysis | Evaluate risk impact |
+| Risk Prioritization | Classify risk severity |
+| Risk Response Planning | Develop strategies to handle risks |
+| Risk Monitoring | Monitor risks during project |
+
+---
+
+### Risk Management Strategies
+
+| Strategy | Description |
+|---|---|
+| Risk Transfer | Transfer risk to another party such as vendor |
+| Risk Avoidance | Change plan to eliminate risk |
+| Risk Reduction | Reduce likelihood or impact of risk |
+| Risk Acceptance | Accept risk and prepare contingency plan |
+
+---
+
+### Importance of Risk Management
+
+- Reduces project failure risk  
+- Improves planning and decision making  
+- Helps teams prepare solutions before problems occur  
+
+---
+
 ## Quick Revision Summary
 
-### Data Analysis
+### Data Analysis Process
 
-- Data Collection
-- Data Cleaning
-- Data Analysis
-- Data Visualization
-- Conclusions
+- Data Collection  
+- Data Cleaning  
+- Data Analysis  
+- Data Visualization  
+- Conclusions  
 
 ---
 
 ### Prototype Types
 
-- Throw Away Prototype
-- Evolutionary Prototype
-- Incremental Prototype
-- Extreme Prototype
+- Throw Away Prototype  
+- Evolutionary Prototype  
+- Incremental Prototype  
+- Extreme Prototype  
 
 ---
 
-### System Changeover Strategies
+### Changeover Strategies
 
-- Direct Changeover
-- Parallel Operation
-- Pilot Operation
-- Phased Operation
+- Direct Changeover  
+- Parallel Operation  
+- Pilot Operation  
+- Phased Operation  
+
+---
